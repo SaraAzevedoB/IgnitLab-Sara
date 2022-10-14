@@ -19,7 +19,7 @@ module.exports = {
     if (configType === 'PRODUCTION') {
       config.base = '/IgnitLab-Sara/'
     }
-    return config
+    return config;
  
   }
 }
