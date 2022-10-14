@@ -18,7 +18,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci --force
+        run: npm ci --legacy-peer-deps
 
       - name: Deploy storybook
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
