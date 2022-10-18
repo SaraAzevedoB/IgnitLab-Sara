@@ -1,3 +1,4 @@
+import { Button } from './components/Button';
 import { Checkbox } from './components/Checkbox';
 import { TextInput } from './components/TextInput';
 import { Text } from './components/Text';
@@ -30,7 +31,7 @@ export function App() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type="email" id='email' placeholder='Digite seu e-mail'/>
+            <TextInput.Input type="email" id='email' placeholder='Digite seu e-mail' />
           </TextInput.Root>
         </label>
 
@@ -42,19 +43,31 @@ export function App() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type="password" id='password' placeholder='********'/>
+            <TextInput.Input type="password" id='password' placeholder='********' />
           </TextInput.Root>
         </label>
-      
 
-      <label htmlFor="remember" className='flex items-center gap-2'>
-        <Checkbox />
-        <Text size='sm' className='text-gray-200'>
-        Lembrar de mim por 30 dias
-        </Text>
-       
-      </label>
+
+        <label htmlFor="remember" className='flex items-center gap-2'>
+          <Checkbox id='remember' />
+          <Text size='sm' className='text-gray-200'>
+            Lembrar de mim por 30 dias
+          </Text>
+
+        </label>
+        <Button type='submit' className='mt-4'>
+          Entrar na plataforma
+        </Button>
       </form>
+
+      <footer className='flex flex-col items-center gap-4 mt-8'>
+        <Text asChild size='sm'> 
+        <a href="" className='text-gray-400 underline hover:text-gray-200'>Esquceu sua senha?</a>
+        </Text>
+        <Text asChild size='sm'> 
+        <a href="" className='text-gray-400 underline hover:text-gray-200'>Não possui conta crie uma agora!</a>
+        </Text>
+      </footer>
     </div>
 
   )
