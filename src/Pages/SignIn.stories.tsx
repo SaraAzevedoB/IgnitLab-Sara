@@ -15,7 +15,7 @@ export default {
 } as Meta
 
 export const Default: StoryObj = {
-    play:({ canvasElement }) => {
+    play: ({ canvasElement }) => {
         const canvas = within(canvasElement)
 
         userEvent.type(canvas.getByPlaceholderText('Digite seu e-mail'), 'benedictosara@gmail.com')
