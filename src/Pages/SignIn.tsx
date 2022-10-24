@@ -1,5 +1,6 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
 import { FormEvent, useState } from "react";
+import axios from 'axios';
 import { Envelope, Lock } from "phosphor-react";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
@@ -10,8 +11,16 @@ import { Logo } from "../Logo";
 export function SignIn() {
     const [isUserSignedIn, setIsUserSignedIn] = useState(false)
 
-    function handleSingIn(event: FormEvent) {
+   async function handleSingIn(event: FormEvent) {
         event.preventDefault()
+
+       await axios.post('/sessions', {
+            email: "benedictosara@gmail.com",
+            password: "12345678",
+
+        })
+
+
         setIsUserSignedIn(true)
     }
     return (
@@ -29,6 +38,7 @@ export function SignIn() {
             </header >
             <form onSubmit={handleSingIn} className='flex flex-col items-stretch gap-4 w-full max-w-sm mt-10'>
                 {isUserSignedIn && <Text>Login Realizado!</Text>}
+
                 <label htmlFor="email" className='flex flex-col gap-3 '>
                     <Text className='font-semibold'>
                         Endereço de e-mail
